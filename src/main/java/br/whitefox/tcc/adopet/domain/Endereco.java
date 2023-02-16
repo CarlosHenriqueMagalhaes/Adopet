@@ -34,15 +34,4 @@ public class Endereco implements Serializable {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-
-    public Endereco(Integer id, String logradouro, String numero, String complemento, String bairro, String cep, String cidade,String estado) {
-        this.id = id;
-        this.logradouro = logradouro;
-        this.numero = numero;
-        this.complemento = complemento;
-        this.bairro = bairro;
-        this.cep = cep;
-        this.cidade = cidade;
-        this.estado = estado;
-    }
 }

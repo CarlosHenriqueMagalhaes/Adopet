@@ -31,16 +31,22 @@ public class AdopetApplication implements CommandLineRunner {
 	@Override
 	public void run (String... args){
 
-	User userDefaultAdm = new User(null,"Zero","zero@mail.com","(35)9705-1145",null, TipoDeUsuario.ADMIN);
-	User userDefault = new User(null,"Nobody","nobobody.padrao@mail.com","(35)9998-0511","3471-0340", TipoDeUsuario.PADRAO);
-	Endereco enderecoDefault = new Endereco(null,"Rua: Lurdes de Oliveira","7",null,"Aristeu Costa Rios","3755-055","Pouso Alegre","MG");
-	Animal animalModel = new Animal(null, TipoDoAnimal.CACHORRO, PorteDoAnimal.MEDIO);
+	User userDefaultAdm = new User(null,"Zero","zero@mail.com","(35)9705-1145","3471-0340", TipoDeUsuario.ADMIN);
+	User userDefault = new User(null,"Anakin Skywalker","anakin_jedi.sith@starmail.com","(35)9998-0511",null, TipoDeUsuario.PADRAO);
+	Endereco enderecoDefaultAdmin = new Endereco
+			(null,"Rua: Lurdes de Oliveira","7","A","Aristeu Costa Rios","3755-055","Pouso Alegre","MG",userDefaultAdm);
+		Endereco enderecoDefault = new Endereco
+				(null,"Setor 7","0",null,"Estrela da Morte","5757-158","Estação Sith","SW",userDefault);
+	Animal animalModelCao = new Animal(null, TipoDoAnimal.CACHORRO, PorteDoAnimal.MEDIO,userDefaultAdm);
+		Animal animalModelGato = new Animal(null, TipoDoAnimal.GATO, PorteDoAnimal.PEQUENO,userDefault);
 
-	userDefault.getEnderecos().add(enderecoDefault);
-	userDefault.getAnimais().add(animalModel);
+		userDefaultAdm.getEnderecos().add(enderecoDefaultAdmin);
+		userDefaultAdm.getAnimais().add(animalModelCao);
+		userDefault.getEnderecos().add(enderecoDefault);
+		userDefault.getAnimais().add(animalModelGato);
 
 		userRepository.saveAll(List.of(userDefaultAdm,userDefault));
-		enderecoRepository.saveAll(List.of(enderecoDefault));
-		animalRepository.saveAll(List.of(animalModel));
+		enderecoRepository.saveAll(List.of(enderecoDefaultAdmin,enderecoDefault));
+		animalRepository.saveAll(List.of(animalModelCao,animalModelGato));
 	}
 }
