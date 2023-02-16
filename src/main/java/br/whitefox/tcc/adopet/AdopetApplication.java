@@ -36,8 +36,6 @@ public class AdopetApplication implements CommandLineRunner {
 	Endereco enderecoDefault = new Endereco(null,"Rua: Lurdes de Oliveira","7",null,"Aristeu Costa Rios","3755-055","Pouso Alegre","MG");
 	Animal animalModel = new Animal(null, TipoDoAnimal.CACHORRO, PorteDoAnimal.MEDIO);
 
-//	enderecoDefault.getUser().add(List.of(userDefault));
-//	animalModel.getUser().add(List.of(userDefault));
 	userDefault.getEnderecos().add(enderecoDefault);
 	userDefault.getAnimais().add(animalModel);
 

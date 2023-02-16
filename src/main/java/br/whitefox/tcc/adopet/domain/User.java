@@ -32,26 +32,19 @@ public class User implements Serializable {
     @NotNull
     private String telefone;
     private String telefoneRecado;
-    private Integer tipo; //  para o caso do ENUMS user padrão ou user admin
+    @Enumerated(EnumType.STRING)
+    private TipoDeUsuario tipoDeUsuario; //  para o caso do ENUMS user padrão ou user admin
     @OneToMany(mappedBy = "user")
     private List<Endereco> enderecos = new ArrayList<>();
     @OneToMany (mappedBy = "user")
     private List<Animal> animais = new ArrayList<>();
 
-    public User(Integer id, String nome, String email, String telefone, String telefoneRecado, TipoDeUsuario tipo) {
+    public User(Integer id, String nome, String email, String telefone, String telefoneRecado, TipoDeUsuario tipoDeUsuario) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
         this.telefoneRecado = telefoneRecado;
-        this.tipo = tipo.getCod();
-    }
-
-    // Getters e setters para o caso do ENUM
-    public TipoDeUsuario getTipo() {
-        return TipoDeUsuario.toEnum(tipo);
-    }
-    public void setTipo(TipoDeUsuario tipo) {
-        this.tipo = tipo.getCod();
+        this.tipoDeUsuario = tipoDeUsuario;
     }
 }
