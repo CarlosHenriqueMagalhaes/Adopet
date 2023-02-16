@@ -1,5 +1,6 @@
 package br.whitefox.tcc.adopet.enums;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -7,9 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public enum TipoDeUsuario {
     PADRAO(1, "Usuário Padrão"), ADMIN(2, "Usuário Administrador");
+
     private int cod;
     private String descricao;
-
     public Integer getCod() {
         return cod;
     }
