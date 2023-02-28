@@ -22,7 +22,7 @@ public class UserService {
     public User buscaUmUsuarioPeloId(Integer id) {
         Optional<User> userOptional = userRepository.findById(id);
         return userOptional.orElseThrow(() -> new ObjectNotFoundException(
-                "Usu encontrado! Id: " + id + ", Tipo: " + User.class.getName()));
+                "Usuário ID: "+ id +", não encontrado!"));
     }
 
     /**

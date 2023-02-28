@@ -34,9 +34,9 @@ public class User implements Serializable {
     private String telefoneRecado;
     @Enumerated(EnumType.STRING)
     private TipoDeUsuario tipoDeUsuario; //  para o caso do ENUMS user padrão ou user admin
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Endereco> enderecos = new ArrayList<>();
-    @OneToMany (mappedBy = "user")
+    @OneToMany (mappedBy = "user", cascade = CascadeType.ALL)
     private List<Animal> animais = new ArrayList<>();
 
     public User(Integer id, String nome, String email, String telefone, String telefoneRecado, TipoDeUsuario tipoDeUsuario) {

@@ -1,6 +1,6 @@
 package br.whitefox.tcc.adopet.controllers;
 
-import br.whitefox.tcc.adopet.controllers.dto.UserDTO;
+import br.whitefox.tcc.adopet.dto.UserDTO;
 import br.whitefox.tcc.adopet.domain.User;
 import br.whitefox.tcc.adopet.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +21,10 @@ public class UserController {
      * @param id
      * @return
      */
-    @GetMapping("/{id}")
-    public ResponseEntity<User> endPointBuscaUmUsuarioPeloId(@RequestParam Integer id) {
+    @GetMapping("/user")
+    public ResponseEntity<UserDTO> endPointBuscaUmUsuarioPeloId(@RequestParam Integer id) {
         User user = userService.buscaUmUsuarioPeloId(id);
-        return ResponseEntity.ok().body(user);
+        return ResponseEntity.ok().body(new UserDTO(user));
     }
 
     /**

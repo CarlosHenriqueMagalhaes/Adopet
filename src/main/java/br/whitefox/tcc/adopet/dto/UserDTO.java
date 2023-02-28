@@ -1,5 +1,6 @@
-package br.whitefox.tcc.adopet.controllers.dto;
+package br.whitefox.tcc.adopet.dto;
 
+import br.whitefox.tcc.adopet.domain.Endereco;
 import br.whitefox.tcc.adopet.domain.User;
 import br.whitefox.tcc.adopet.enums.TipoDeUsuario;
 import jakarta.persistence.Column;
@@ -11,9 +12,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
-import org.springframework.format.annotation.NumberFormat;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -33,13 +35,15 @@ public class UserDTO implements Serializable {
     private String telefone;
     private String telefoneRecado;
     private TipoDeUsuario tipoDeUsuario;
+   // private List<EnderecoDTO> enderecos = new ArrayList<>();
 
-    public UserDTO (User userDto){
-        id = userDto.getId();
-        nome = userDto.getNome();
-        email = userDto.getEmail();
-        telefone = userDto.getTelefone();
-        telefoneRecado = userDto.getTelefoneRecado();
-        tipoDeUsuario = userDto.getTipoDeUsuario();
+    public UserDTO (User user){
+        id = user.getId();
+        nome = user.getNome();
+        email = user.getEmail();
+        telefone = user.getTelefone();
+        telefoneRecado = user.getTelefoneRecado();
+        tipoDeUsuario = user.getTipoDeUsuario();
+//        enderecos = user.getEnderecos();
     }
 }

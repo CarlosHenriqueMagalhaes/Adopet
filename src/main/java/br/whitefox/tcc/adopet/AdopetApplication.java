@@ -31,6 +31,7 @@ public class AdopetApplication implements CommandLineRunner {
 	@Override
 	public void run (String... args){
 
+
 	User userDefaultAdm = new User(null,"Zero","zero@mail.com","(35)9705-1145","3471-0340", TipoDeUsuario.ADMIN);
 	User userDefault = new User(null,"Anakin Skywalker","anakin_jedi.sith@starmail.com","(35)9998-0511",null, TipoDeUsuario.PADRAO);
 	Endereco enderecoDefaultAdmin = new Endereco
