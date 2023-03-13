@@ -1,4 +1,4 @@
-package br.whitefox.tcc.adopet.enums;
+package br.whitefox.tcc.adopet.enums.usuario;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

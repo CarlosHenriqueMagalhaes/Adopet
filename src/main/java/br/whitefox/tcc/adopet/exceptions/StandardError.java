@@ -10,16 +10,16 @@ import java.io.Serializable;
 public class StandardError implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Integer status;
-	private String msg;
+	private String mensagem;
 
 	/**
 	 *Constructors
 	 */
 	public StandardError() {
 	}
-	public StandardError(Integer status, String msg) {
+	public StandardError(Integer status, String mensagem) {
 		this.status = status;
-		this.msg = msg;
+		this.mensagem = mensagem;
 	}
 
 	/**
@@ -31,10 +31,10 @@ public class StandardError implements Serializable {
 	public void setStatus(Integer status) {
 		this.status = status;
 	}
-	public String getMsg() {
-		return msg;
+	public String getMensagem() {
+		return mensagem;
 	}
-	public void setMsg(String msg) {
-		this.msg = msg;
+	public void setMensagem(String mensagem) {
+		this.mensagem = mensagem;
 	}
 }

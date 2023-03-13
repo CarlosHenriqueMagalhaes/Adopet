@@ -1,7 +1,7 @@
 package br.whitefox.tcc.adopet.domain;
 
-import br.whitefox.tcc.adopet.enums.PorteDoAnimal;
-import br.whitefox.tcc.adopet.enums.TipoDoAnimal;
+import br.whitefox.tcc.adopet.enums.animal.PorteDoAnimal;
+import br.whitefox.tcc.adopet.enums.animal.TipoDoAnimal;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,6 +23,6 @@ public class Animal implements Serializable {
     @Enumerated(EnumType.STRING)
     private PorteDoAnimal porte;
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 }
