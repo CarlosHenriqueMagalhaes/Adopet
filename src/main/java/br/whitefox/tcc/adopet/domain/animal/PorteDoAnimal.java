@@ -1,4 +1,4 @@
-package br.whitefox.tcc.adopet.enums.animal;
+package br.whitefox.tcc.adopet.domain.animal;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

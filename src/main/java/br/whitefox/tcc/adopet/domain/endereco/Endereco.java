@@ -1,5 +1,6 @@
-package br.whitefox.tcc.adopet.domain;
+package br.whitefox.tcc.adopet.domain.endereco;
 
+import br.whitefox.tcc.adopet.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,7 +1,7 @@
-package br.whitefox.tcc.adopet.domain;
+package br.whitefox.tcc.adopet.domain.usuario;
 
-import br.whitefox.tcc.adopet.dto.usuario.DadosCadastroUsuario;
-import br.whitefox.tcc.adopet.enums.usuario.TipoDeUsuario;
+import br.whitefox.tcc.adopet.domain.animal.Animal;
+import br.whitefox.tcc.adopet.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,12 +28,13 @@ public class Usuario implements Serializable {
     @Enumerated(EnumType.STRING)
     private TipoDeUsuario tipoDeUsuario; //  para o caso do ENUMS user padrão ou user admin
     // @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
-    private Endereco enderecos;
+    private Endereco endereco;
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
     private List<Animal> animais = new ArrayList<>();
 
     /**
      * Constructor para Usuario DTO e método from DTO
+     *
      * @param id
      * @param nome
      * @param email
@@ -56,9 +57,21 @@ public class Usuario implements Serializable {
      * @param dadosCadastroUsuario
      */
     public Usuario(DadosCadastroUsuario dadosCadastroUsuario) {
-        this.nome = nome;
-        this.email = email;
-        this.telefone = telefone;
-        this.telefoneRecado = telefoneRecado;
+        this.nome = dadosCadastroUsuario.nome();
+        this.email = dadosCadastroUsuario.email();
+        this.telefone = dadosCadastroUsuario.telefone();
+        this.telefoneRecado = dadosCadastroUsuario.telefoneRecado();
+    }
+
+    public void atualizarInformacoes(DadosAtualizacaoUsuario dados) {
+        if (dados.nome() != null) {
+            this.nome = dados.nome();
+        }
+        if (dados.telefone() != null) {
+            this.telefone = dados.telefone();
+        }
+        if (dados.telefoneRecado() != null) {
+            this.telefoneRecado = dados.telefoneRecado();
+        }
     }
 }

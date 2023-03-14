@@ -1,6 +1,5 @@
-package br.whitefox.tcc.adopet.repositories;
+package br.whitefox.tcc.adopet.domain.usuario;
 
-import br.whitefox.tcc.adopet.domain.Usuario;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

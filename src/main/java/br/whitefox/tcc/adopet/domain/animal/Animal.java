@@ -1,7 +1,6 @@
-package br.whitefox.tcc.adopet.domain;
+package br.whitefox.tcc.adopet.domain.animal;
 
-import br.whitefox.tcc.adopet.enums.animal.PorteDoAnimal;
-import br.whitefox.tcc.adopet.enums.animal.TipoDoAnimal;
+import br.whitefox.tcc.adopet.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

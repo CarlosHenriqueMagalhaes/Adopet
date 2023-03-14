@@ -1,6 +1,6 @@
-package br.whitefox.tcc.adopet.repositories;
+package br.whitefox.tcc.adopet.domain.animal;
 
-import br.whitefox.tcc.adopet.domain.Animal;
+import br.whitefox.tcc.adopet.domain.animal.Animal;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

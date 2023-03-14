@@ -1,6 +1,6 @@
-package br.whitefox.tcc.adopet.repositories;
+package br.whitefox.tcc.adopet.domain.endereco;
 
-import br.whitefox.tcc.adopet.domain.Endereco;
+import br.whitefox.tcc.adopet.domain.endereco.Endereco;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

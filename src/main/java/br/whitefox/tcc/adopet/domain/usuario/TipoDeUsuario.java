@@ -1,6 +1,5 @@
-package br.whitefox.tcc.adopet.enums.usuario;
+package br.whitefox.tcc.adopet.domain.usuario;
 
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
