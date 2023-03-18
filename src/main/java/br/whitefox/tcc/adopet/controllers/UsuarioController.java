@@ -40,7 +40,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity buscarUsuarioPorId(@PathVariable Integer id) {
+    public ResponseEntity buscarUsuarioPorId(@PathVariable Integer id){
         Usuario usuario = usuarioService.buscarUsuarioPeloId(id);
         return ResponseEntity.ok(new DetalhamentoUsuario(usuario));
     }
@@ -48,7 +48,7 @@ public class UsuarioController {
     @PutMapping("/{id}")
     @Transactional
     public ResponseEntity atualizarUsuario(@PathVariable Integer id, @RequestBody @Valid DadosAtualizacaoUsuario dados) {
-        var usuario = usuarioService.AlterarUsuario(id, dados);
+        var usuario = usuarioService.alterarUsuario(id, dados);
         usuario.atualizarInformacoes(dados);
         return ResponseEntity.ok(new DadosAtualizacaoUsuario(usuario));
     }

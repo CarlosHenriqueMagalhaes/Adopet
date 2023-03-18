@@ -35,7 +35,7 @@ public class UsuarioService {
         return usuario.orElseThrow();
     }
 
-    public Usuario AlterarUsuario(Integer id, DadosAtualizacaoUsuario usuario) {
+    public Usuario alterarUsuario(Integer id, DadosAtualizacaoUsuario usuario) {
         return usuarioRepository.getReferenceById(id);
     }
 

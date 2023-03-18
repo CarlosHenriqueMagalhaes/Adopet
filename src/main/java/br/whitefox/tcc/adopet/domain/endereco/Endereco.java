@@ -1,5 +1,6 @@
 package br.whitefox.tcc.adopet.domain.endereco;
 
+import br.whitefox.tcc.adopet.domain.usuario.DadosAtualizacaoUsuario;
 import br.whitefox.tcc.adopet.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -37,5 +38,39 @@ public class Endereco implements Serializable {
         this.cep = cep;
         this.cidade = cidade;
         this.estado = estado;
+    }
+
+    public Endereco(DadosCadastroEAtualizacaoEndereco dadosCadastroEndereco) {
+        this.logradouro = dadosCadastroEndereco.logradouro();
+        this.numero = dadosCadastroEndereco.numero();
+        this.complemento = dadosCadastroEndereco.complemento();
+        this.bairro = dadosCadastroEndereco.bairro();
+        this.cep = dadosCadastroEndereco.cep();
+        this.cidade = dadosCadastroEndereco.cidade();
+        this.estado = dadosCadastroEndereco.estado();
+    }
+
+    public void atualizarInformacoes(DadosCadastroEAtualizacaoEndereco dados) {
+        if (dados.logradouro() != null) {
+            this.logradouro = dados.logradouro();
+        }
+        if (dados.numero() != null) {
+            this.numero = dados.numero();
+        }
+        if (dados.complemento() != null) {
+            this.complemento = dados.complemento();
+        }
+        if (dados.bairro() != null) {
+            this.bairro = dados.bairro();
+        }
+        if (dados.cep() != null) {
+            this.cep = dados.cep();
+        }
+        if (dados.cidade() != null) {
+            this.cidade = dados.cidade();
+        }
+        if (dados.estado() != null) {
+            this.estado = dados.estado();
+        }
     }
 }
