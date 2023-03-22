@@ -14,9 +14,7 @@ public record DadosCadastroEAtualizacaoEndereco(
         @Pattern(regexp = "\\d{8}")
         String cep,
         String cidade,
-        @Pattern(regexp = "\\d{2}")
         String estado) {
-
         public DadosCadastroEAtualizacaoEndereco(Endereco endereco) {
                 this(
                         endereco.getLogradouro(),
@@ -25,7 +23,7 @@ public record DadosCadastroEAtualizacaoEndereco(
                         endereco.getBairro(),
                         endereco.getCep(),
                         endereco.getCidade(),
-                        endereco.getEstado());
+                        endereco.getEstado()
+                );
         }
-
 }

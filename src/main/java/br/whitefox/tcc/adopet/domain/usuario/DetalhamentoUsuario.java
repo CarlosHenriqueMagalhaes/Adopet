@@ -1,7 +1,5 @@
 package br.whitefox.tcc.adopet.domain.usuario;
 
-import br.whitefox.tcc.adopet.domain.endereco.Endereco;
-
 // Usado para o método de listar todos usuários sem trazer o endereço no corpo
 public record DetalhamentoUsuario(
         Integer id,
@@ -9,8 +7,7 @@ public record DetalhamentoUsuario(
         String email,
         String telefone,
         String telefoneRecado,
-        TipoDeUsuario tipoDeUsuario,
-        Endereco endereco) {
+        TipoDeUsuario tipoDeUsuario) {
     public DetalhamentoUsuario(Usuario usuario) {
         this(
                 usuario.getId(),
@@ -18,7 +15,6 @@ public record DetalhamentoUsuario(
                 usuario.getEmail(),
                 usuario.getTelefone(),
                 usuario.getTelefoneRecado(),
-                usuario.getTipoDeUsuario(),
-                usuario.getEndereco());
+                usuario.getTipoDeUsuario());
     }
 }

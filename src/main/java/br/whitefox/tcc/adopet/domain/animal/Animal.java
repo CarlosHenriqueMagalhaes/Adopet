@@ -24,4 +24,10 @@ public class Animal implements Serializable {
     @ManyToOne
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
+
+    public Animal(DetalhamentoAnimal dados) {
+        this.porte = dados.porte();
+        this.raca = dados.raca();
+    }
 }
+

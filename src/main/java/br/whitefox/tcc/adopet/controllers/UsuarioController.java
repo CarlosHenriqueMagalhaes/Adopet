@@ -35,8 +35,8 @@ public class UsuarioController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<ListagemUsuario>> listarTodosUsuarios(@PageableDefault(size = 10, page = 0, sort = {"nome"}) Pageable paginacao) {
-        return ResponseEntity.ok().body(usuarioService.listarTodosUsuarios(paginacao).map(ListagemUsuario::new));
+    public ResponseEntity<Page<DetalhamentoUsuario>> listarTodosUsuarios(@PageableDefault(size = 10, page = 0, sort = {"nome"}) Pageable paginacao) {
+        return ResponseEntity.ok().body(usuarioService.listarTodosUsuarios(paginacao).map(DetalhamentoUsuario::new));
     }
 
     @GetMapping("/{id}")

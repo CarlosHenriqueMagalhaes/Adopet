@@ -1,5 +1,7 @@
 package br.whitefox.tcc.adopet.domain.endereco;
 
+import java.util.Optional;
+
 public record DetalhamentoEndereco(
         Integer id,
         String logradouro,

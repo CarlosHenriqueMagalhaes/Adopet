@@ -25,21 +25,21 @@ public class EnderecoController {
         return ResponseEntity.created(null).body(new DetalhamentoEndereco(endereco));
     }
 
-    //page
+    //page //traz apenas se tiver um elemento
     @GetMapping("/cidade")
     public ResponseEntity buscarEnderecoPelaCidade(@RequestParam String cidade) {
         Endereco endereco = enderecoService.buscarEnderecoPelaCidade(cidade);
         return ResponseEntity.ok(new DetalhamentoEndereco(endereco));
     }
 
-    //page
+    //page //traz apenas se tiver um elemento
     @GetMapping("/cep")
     public ResponseEntity buscarEnderecoPeloCep(@RequestParam String bairro) {
         Endereco endereco = enderecoService.buscarEnderecoPeloCep(bairro);
         return ResponseEntity.ok(new DetalhamentoEndereco(endereco));
     }
 
-    //page
+    //page //traz apenas se tiver um elemento
     @GetMapping("/estado")
     public ResponseEntity buscarEnderecoPeloEstado(@RequestParam String estado) {
         Endereco endereco = enderecoService.buscarEnderecoPeloEstado(estado);
