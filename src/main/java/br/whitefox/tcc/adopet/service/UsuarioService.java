@@ -14,7 +14,7 @@ import java.util.Optional;
 @Service
 public class UsuarioService {
     @Autowired
-    UsuarioRepository usuarioRepository;
+    private UsuarioRepository usuarioRepository;
 
     public Usuario cadastrarUsuarioPadrao(Usuario usuario) {
         usuario.setTipoDeUsuario(TipoDeUsuario.PADRAO);

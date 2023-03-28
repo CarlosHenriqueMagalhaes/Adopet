@@ -20,7 +20,7 @@ public class UsuarioController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity cadastrarUsuarioPadrao(@RequestBody @Valid DadosCadastroUsuario dados) {
+    public ResponseEntity<DetalhamentoUsuario> cadastrarUsuarioPadrao(@RequestBody @Valid DadosCadastroUsuario dados) {
         var usuario = new Usuario(dados);
         usuarioService.cadastrarUsuarioPadrao(usuario);
         return ResponseEntity.created(null).body(new DetalhamentoUsuario(usuario));
@@ -28,7 +28,7 @@ public class UsuarioController {
 
     @PostMapping("/administrador")
     @Transactional
-    public ResponseEntity cadastrarUsuarioAdministrador(@RequestBody @Valid DadosCadastroUsuario dados) {
+    public ResponseEntity<DetalhamentoUsuario> cadastrarUsuarioAdministrador(@RequestBody @Valid DadosCadastroUsuario dados) {
         var usuario = new Usuario(dados);
         usuarioService.cadastrarUsuarioAdministrador(usuario);
         return ResponseEntity.created(null).body(new DetalhamentoUsuario(usuario));
@@ -40,14 +40,14 @@ public class UsuarioController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity buscarUsuarioPorId(@PathVariable Integer id){
+    public ResponseEntity<DetalhamentoUsuario> buscarUsuarioPorId(@PathVariable Integer id){
         Usuario usuario = usuarioService.buscarUsuarioPeloId(id);
         return ResponseEntity.ok(new DetalhamentoUsuario(usuario));
     }
 
     @PutMapping("/{id}")
     @Transactional
-    public ResponseEntity atualizarUsuario(@PathVariable Integer id, @RequestBody @Valid DadosAtualizacaoUsuario dados) {
+    public ResponseEntity<DadosAtualizacaoUsuario> atualizarUsuario(@PathVariable Integer id, @RequestBody @Valid DadosAtualizacaoUsuario dados) {
         var usuario = usuarioService.alterarUsuario(id, dados);
         usuario.atualizarInformacoes(dados);
         return ResponseEntity.ok(new DadosAtualizacaoUsuario(usuario));
@@ -55,7 +55,7 @@ public class UsuarioController {
 
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity deletarUsuario(@PathVariable Integer id) {
+    public ResponseEntity<?> deletarUsuario(@PathVariable Integer id) {
         usuarioService.deletarUsuario(id);
         return ResponseEntity.noContent().build();
     }

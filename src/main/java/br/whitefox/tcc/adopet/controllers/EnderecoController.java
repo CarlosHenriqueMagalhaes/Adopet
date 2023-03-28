@@ -6,6 +6,9 @@ import br.whitefox.tcc.adopet.domain.endereco.Endereco;
 import br.whitefox.tcc.adopet.service.EnderecoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -19,36 +22,30 @@ public class EnderecoController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity cadastrarEndereco(@RequestBody @Valid DadosCadastroEAtualizacaoEndereco dados) {
+    public ResponseEntity<DetalhamentoEndereco> cadastrarEndereco(@RequestBody @Valid DadosCadastroEAtualizacaoEndereco dados) {
         var endereco = new Endereco(dados);
         enderecoService.cadastrarEndereco(endereco);
         return ResponseEntity.created(null).body(new DetalhamentoEndereco(endereco));
     }
-
-    //page //traz apenas se tiver um elemento
-    @GetMapping("/cidade")
-    public ResponseEntity buscarEnderecoPelaCidade(@RequestParam String cidade) {
-        Endereco endereco = enderecoService.buscarEnderecoPelaCidade(cidade);
-        return ResponseEntity.ok(new DetalhamentoEndereco(endereco));
-    }
-
-    //page //traz apenas se tiver um elemento
-    @GetMapping("/cep")
-    public ResponseEntity buscarEnderecoPeloCep(@RequestParam String bairro) {
-        Endereco endereco = enderecoService.buscarEnderecoPeloCep(bairro);
-        return ResponseEntity.ok(new DetalhamentoEndereco(endereco));
-    }
-
-    //page //traz apenas se tiver um elemento
-    @GetMapping("/estado")
-    public ResponseEntity buscarEnderecoPeloEstado(@RequestParam String estado) {
-        Endereco endereco = enderecoService.buscarEnderecoPeloEstado(estado);
-        return ResponseEntity.ok(new DetalhamentoEndereco(endereco));
-    }
+//
+//    @GetMapping("/cidade")
+//    public ResponseEntity<Page<DetalhamentoEndereco>> buscarEnderecoPelaCidade(@PageableDefault(size = 10, page = 0) Pageable cidade) {
+//        return ResponseEntity.ok().body(enderecoService.buscarEnderecoPelaCidade(cidade).map(DetalhamentoEndereco::new));
+//    }
+//
+//    @GetMapping("/cep")
+//    public ResponseEntity<Page<DetalhamentoEndereco>> buscarEnderecoPeloCep(@PageableDefault(size = 10, page = 0) Pageable cep) {
+//        return ResponseEntity.ok().body(enderecoService.buscarEnderecoPeloCep(cep).map(DetalhamentoEndereco::new));
+//    }
+//
+//    @GetMapping("/estado")
+//    public ResponseEntity<Page<DetalhamentoEndereco>> buscarEnderecoPeloEstado(@PageableDefault(size = 10, page = 0) Pageable estado) {
+//        return ResponseEntity.ok().body(enderecoService.buscarEnderecoPeloEstado(estado).map(DetalhamentoEndereco::new));
+//    }
 
     @PutMapping("/{id}")
     @Transactional
-    public ResponseEntity atualizarEndereco(@PathVariable Integer id, @RequestBody @Valid DadosCadastroEAtualizacaoEndereco dados) {
+    public ResponseEntity<DadosCadastroEAtualizacaoEndereco> atualizarEndereco(@PathVariable Integer id, @RequestBody @Valid DadosCadastroEAtualizacaoEndereco dados) {
         var endereco = enderecoService.alterarEndereco(id, dados);
         endereco.atualizarInformacoes(dados);
         return ResponseEntity.ok(new DadosCadastroEAtualizacaoEndereco(endereco));
