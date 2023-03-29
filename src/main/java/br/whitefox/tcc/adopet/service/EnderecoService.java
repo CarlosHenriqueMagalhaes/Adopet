@@ -17,17 +17,17 @@ public class EnderecoService {
         return enderecoRepository.save(endereco);
     }
 
-//    public Page<Endereco> buscarEnderecoPelaCidade(Pageable cidade) {
-//        return enderecoRepository.findByCidade(cidade);
-//    }
-//
-//    public Page<Endereco> buscarEnderecoPeloCep(Pageable cep) {
-//        return enderecoRepository.findByCep(cep);
-//    }
-//
-//    public Page<Endereco> buscarEnderecoPeloEstado(Pageable estado) {
-//        return enderecoRepository.findByEstado(estado);
-//    }
+    public Page<Endereco> buscarEnderecoPelaCidade(String cidade, Pageable page) {
+        return enderecoRepository.findByCidade(cidade, page);
+    }
+
+    public Page<Endereco> buscarEnderecoPeloCep(String cep, Pageable page) {
+        return enderecoRepository.findByCep(cep, page);
+    }
+
+    public Page<Endereco> buscarEnderecoPeloEstado(String estado, Pageable page) {
+        return enderecoRepository.findByEstado(estado, page);
+    }
 
     public Endereco alterarEndereco(Integer id, DadosCadastroEAtualizacaoEndereco dados) {
         return enderecoRepository.getReferenceById(id);

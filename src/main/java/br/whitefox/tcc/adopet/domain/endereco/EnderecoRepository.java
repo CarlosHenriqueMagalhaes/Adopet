@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EnderecoRepository extends JpaRepository<Endereco, Integer> {
-//    Page<Endereco> findByCidade(Pageable cidade);
-//    Page<Endereco>findByCep(Pageable cep);
-//    Page<Endereco> findByEstado(Pageable estado);
+    Page<Endereco> findByCidade(String cidade, Pageable page);
+    Page<Endereco>findByCep(String cep, Pageable page);
+    Page<Endereco> findByEstado(String estado, Pageable page);
 }

@@ -27,21 +27,21 @@ public class EnderecoController {
         enderecoService.cadastrarEndereco(endereco);
         return ResponseEntity.created(null).body(new DetalhamentoEndereco(endereco));
     }
-//
-//    @GetMapping("/cidade")
-//    public ResponseEntity<Page<DetalhamentoEndereco>> buscarEnderecoPelaCidade(@PageableDefault(size = 10, page = 0) Pageable cidade) {
-//        return ResponseEntity.ok().body(enderecoService.buscarEnderecoPelaCidade(cidade).map(DetalhamentoEndereco::new));
-//    }
-//
-//    @GetMapping("/cep")
-//    public ResponseEntity<Page<DetalhamentoEndereco>> buscarEnderecoPeloCep(@PageableDefault(size = 10, page = 0) Pageable cep) {
-//        return ResponseEntity.ok().body(enderecoService.buscarEnderecoPeloCep(cep).map(DetalhamentoEndereco::new));
-//    }
-//
-//    @GetMapping("/estado")
-//    public ResponseEntity<Page<DetalhamentoEndereco>> buscarEnderecoPeloEstado(@PageableDefault(size = 10, page = 0) Pageable estado) {
-//        return ResponseEntity.ok().body(enderecoService.buscarEnderecoPeloEstado(estado).map(DetalhamentoEndereco::new));
-//    }
+
+    @GetMapping("/cidade/{cidade}")
+    public ResponseEntity<Page<DetalhamentoEndereco>> buscarEnderecoPelaCidade(@PageableDefault(size = 10, page = 0)@PathVariable String cidade, Pageable page) {
+        return ResponseEntity.ok().body(enderecoService.buscarEnderecoPelaCidade(cidade, page).map(DetalhamentoEndereco::new));
+    }
+
+    @GetMapping("/cep/{cep}")
+    public ResponseEntity<Page<DetalhamentoEndereco>> buscarEnderecoPeloCep(@PageableDefault(size = 10, page = 0)@PathVariable String cep, Pageable page) {
+        return ResponseEntity.ok().body(enderecoService.buscarEnderecoPeloCep(cep, page).map(DetalhamentoEndereco::new));
+    }
+
+    @GetMapping("/estado/{estado}")
+    public ResponseEntity<Page<DetalhamentoEndereco>> buscarEnderecoPeloEstado(@PageableDefault(size = 10, page = 0) @PathVariable String estado, Pageable page) {
+        return ResponseEntity.ok().body(enderecoService.buscarEnderecoPeloEstado(estado, page).map(DetalhamentoEndereco::new));
+    }
 
     @PutMapping("/{id}")
     @Transactional
