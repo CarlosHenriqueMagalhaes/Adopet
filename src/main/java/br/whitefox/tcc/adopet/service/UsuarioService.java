@@ -16,14 +16,14 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    public Usuario cadastrarUsuarioPadrao(Usuario usuario) {
+    public void cadastrarUsuarioPadrao(Usuario usuario) {
         usuario.setTipoDeUsuario(TipoDeUsuario.PADRAO);
-        return usuarioRepository.save(usuario);
+        usuarioRepository.save(usuario);
     }
 
-    public Usuario cadastrarUsuarioAdministrador(Usuario usuario) {
+    public void cadastrarUsuarioAdministrador(Usuario usuario) {
         usuario.setTipoDeUsuario(TipoDeUsuario.ADMIN);
-        return usuarioRepository.save(usuario);
+        usuarioRepository.save(usuario);
     }
 
     public Page<Usuario> listarTodosUsuarios(Pageable page) {

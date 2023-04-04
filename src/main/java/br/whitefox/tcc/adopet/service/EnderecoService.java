@@ -13,8 +13,8 @@ public class EnderecoService {
     @Autowired
     private EnderecoRepository enderecoRepository;
 
-    public Endereco cadastrarEndereco(Endereco endereco) {
-        return enderecoRepository.save(endereco);
+    public void cadastrarEndereco(Endereco endereco) {
+        enderecoRepository.save(endereco);
     }
 
     public Page<Endereco> buscarEnderecoPelaCidade(String cidade, Pageable page) {

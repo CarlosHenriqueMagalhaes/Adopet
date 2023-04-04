@@ -29,5 +29,11 @@ public class Animal implements Serializable {
         this.porte = dados.porte();
         this.raca = dados.raca();
     }
+
+    public Animal(DetalhamentoAnimalComIdendificador dados) {
+        this.id = dados.id();
+        this.porte = dados.porte();
+        this.raca = dados.raca();
+    }
 }
 

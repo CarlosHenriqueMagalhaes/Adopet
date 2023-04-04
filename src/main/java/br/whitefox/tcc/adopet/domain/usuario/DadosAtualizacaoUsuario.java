@@ -14,7 +14,6 @@ public record DadosAtualizacaoUsuario(
         this(
                 usuario.getNome(),
                 usuario.getTelefone(),
-                usuario.getTelefoneRecado()
-        );
+                usuario.getTelefoneRecado());
     }
 }

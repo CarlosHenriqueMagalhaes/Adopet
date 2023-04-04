@@ -10,4 +10,7 @@ public interface AnimalRepository extends JpaRepository<Animal, Integer> {
 
     @Override
     Page<Animal> findAll(Pageable pageable);
+
+    Page<Animal> findByRaca(TipoDoAnimal raca, Pageable page);
+    Page<Animal> findByPorte(PorteDoAnimal porte, Pageable page);
 }

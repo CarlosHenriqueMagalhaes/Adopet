@@ -23,7 +23,6 @@ public record DadosCadastroEAtualizacaoEndereco(
                         endereco.getBairro(),
                         endereco.getCep(),
                         endereco.getCidade(),
-                        endereco.getEstado()
-                );
+                        endereco.getEstado());
         }
 }
