@@ -1,0 +1,70 @@
+{
+    "nome":"Carlos Henrique",
+    "email":"carlosHgmail.com",
+    "telefone": "(35)3479-0586",
+    "telefoneRecado":"(35)3479-0586"
+}
+
+-------------------------------------------
+{
+    "nome":"Kaique",
+    "email":"zero@mail.com",
+    "telefone": "(35)3479-0586",
+    "telefoneRecado":"(35)3479-0586"
+}
+
+-------------------------------------------
+
+{
+    "nome":"Sanara Felicio",
+    "email":"sanafm@mail.com",
+    "telefone": "(35)3479-4968",
+    "telefoneRecado":""
+}
+
+-------------------------------------------
+
+{
+    "nome":"Felipe",
+    "email":"olrox_fel@mail.com",
+    "telefone": "(35)99805-7698",
+    "telefoneRecado":"(35)3479-0586"
+}
+
+-------------------------------------------
+
+{
+    "nome":"Allan Neves",
+    "email":"nanam@mail.com",
+    "telefone": "(35)98956-9173",
+    "telefoneRecado":""
+}
+
+-------------------------------------------
+
+{
+    "nome":"Gustavo",
+    "email":"bodão_guti@hotmail.com.br",
+    "telefone": "(35)99661-6661",
+    "telefoneRecado":"(35)99661-6661"
+}
+
+-------------------------------------------
+
+{
+    "nome":"Daniele Oliveira",
+    "email":"dany_rh@interprice.mail.com",
+    "telefone": "(35)9550-7532",
+    "telefoneRecado":""
+}
+
+-------------------------------------------
+
+{
+    "nome":"André Oliveira",
+    "email":"deizy@mail.com",
+    "telefone": "(35)3456-8583",
+    "telefoneRecado":"(35)9550-7532"
+}
+
+-------------------------------------------

@@ -1,0 +1,60 @@
+{
+    "raca":"CACHORRO",
+    "porte":"PEQUENO"
+}
+------------------------
+{
+    "raca":"CACHORRO",
+    "porte":"MEDIO"
+}
+------------------------
+{
+    "raca":"CACHORRO",
+    "porte":"GRANDE"
+}
+------------------------
+{
+    "raca":"GATO",
+    "porte":"PEQUENO"
+}
+------------------------
+{
+    "raca":"GATO",
+    "porte":"MEDIO"
+}
+------------------------
+{
+    "raca":"GATO",
+    "porte":"GRANDE"
+}
+------------------------
+{
+    "raca":"COELHO",
+    "porte":"PEQUENO"
+}
+------------------------
+{
+    "raca":"COELHO",
+    "porte":"MEDIO"
+}
+------------------------
+{
+    "raca":"COELHO",
+    "porte":"GRANDE"
+}
+------------------------
+{
+    "raca":"OUTROS",
+    "porte":"PEQUENO"
+}
+------------------------
+{
+    "raca":"OUTROS",
+    "porte":"MEDIO"
+}
+------------------------
+{
+    "raca":"OUTROS",
+    "porte":"GRANDE"
+}
+------------------------

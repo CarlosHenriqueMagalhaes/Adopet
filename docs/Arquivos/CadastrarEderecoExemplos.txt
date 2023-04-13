@@ -1,0 +1,63 @@
+{
+    "logradouro":"Rua alfa",
+    "numero":"1204",
+    "complemanto": "bloco 5, apto 202",
+    "bairro": "Alameda Verde",
+    "cep":"37540001",
+    "cidade":"Pouso do Campo",
+    "estado":"mg"
+}
+----------------------------------
+{
+    "logradouro":"Rua das flores",
+    "numero":"12",
+    "complemanto": "",
+    "bairro": "Costa Rios",
+    "cep":"37540001",
+    "cidade":"Pouso do Campo",
+    "estado":"mg"
+}
+----------------------------------
+
+{
+    "logradouro":"Amarais dos Santos",
+    "numero":"404",
+    "complemanto": "",
+    "bairro": "Vila das fontes",
+    "cep":"37540555",
+    "cidade":"Itajuba",
+    "estado":"SP"
+}
+----------------------------------
+
+{
+    "logradouro":"Rua alfa",
+    "numero":"1203",
+    "complemanto": "bloco 5, apto 202",
+    "bairro": "Alameda Verde",
+    "cep":"37540001",
+    "cidade":"Pouso do Campo",
+    "estado":"mg"
+}
+----------------------------------
+
+{
+    "logradouro":"Rua dos Bobos",
+    "numero":"0",
+    "complemanto": "",
+    "bairro": "Lírios da Infancia",
+    "cep":"38550455",
+    "cidade":"Itajuba",
+    "estado":"SP"
+}
+
+----------------------------------
+{
+    "logradouro":"Amarelinha",
+    "numero":"26",
+    "complemanto": "Apto 201",
+    "bairro": "Ype",
+    "cep":"37362555",
+    "cidade":"Piranguinho",
+    "estado":"MG"
+}

@@ -11,8 +11,8 @@ public record DadosCadastroUsuario(
         @NotBlank(message = "Preenchimento obrigatório")
         @Length(min = 2, max = 80, message = "Esse campo deve conter entre 2 e 80 caracteres")
         String nome,
-        @NotBlank(message = "Esse email ja esta cadastrado!")
-        @Email (message = "Deve ser preenchido com um endereço de email")
+        @NotBlank(message = "Preenchimento obrigatório")
+        @Email (message = "Deve ser preenchido com um endereço de email válido")
         @Column(unique = true)
         String email,
         String telefone,
