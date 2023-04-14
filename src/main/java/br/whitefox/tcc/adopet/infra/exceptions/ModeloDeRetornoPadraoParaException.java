@@ -1,4 +1,4 @@
-package br.whitefox.tcc.adopet.exceptions;
+package br.whitefox.tcc.adopet.infra.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

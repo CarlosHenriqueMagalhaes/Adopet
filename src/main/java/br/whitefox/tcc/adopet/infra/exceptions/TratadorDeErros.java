@@ -1,4 +1,4 @@
-package br.whitefox.tcc.adopet.exceptions;
+package br.whitefox.tcc.adopet.infra.exceptions;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
