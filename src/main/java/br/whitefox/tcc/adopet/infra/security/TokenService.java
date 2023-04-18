@@ -1,7 +1,6 @@
 package br.whitefox.tcc.adopet.infra.security;
 
-import br.com.whitefox.project.digital.med.domain.usuario.Usuario;
-import br.whitefox.tcc.adopet.domain.login.UsuarioLogin;
+import br.whitefox.tcc.adopet.domain.usuario.Usuario;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
@@ -19,20 +18,12 @@ public class TokenService {
     @Value("${adopet.security.token.secret}")
     private String secret;
 
-    /**
-     * método da lib jwt.io copiada do tutorial https://github.com/auth0/java-jwt
-     * foram feitas modificações para se adequar ao projeto
-     * Importante:
-     * É recomendado configurar uma data de expiração para os Tokens
-     *
-     * @return
-     */
-    public String gerarToken(UsuarioLogin usuario) {
+    public String gerarToken(Usuario usuario) {
         try {
             var algoritimo = Algorithm.HMAC256(secret);
             return JWT.create()
-                    .withIssuer("API digitalmed")
-                    .withSubject(usuario.getLogin())
+                    .withIssuer("API Adopet")
+                    .withSubject(usuario.getEmail())
                     .withExpiresAt(dataExpiracao())
                     .sign(algoritimo);
         } catch (JWTCreationException exception) {
@@ -40,19 +31,10 @@ public class TokenService {
         }
     }
 
-    /**
-     * Método que configura a data de expiração
-     * @return
-     */
     private Instant dataExpiracao() {
         return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
     }
 
-    /**
-     * valida o token atravez do subject no metodo gerarToken (metodo nessa mesma classe!)
-     * @param tokenJWT
-     * @return
-     */
     public String getSubject(String tokenJWT){
         try {
             var algoritimo = Algorithm.HMAC256(secret);

@@ -1,7 +1,6 @@
 package br.whitefox.tcc.adopet.infra.security;
 
-import br.com.whitefox.project.digital.med.domain.usuario.UsuarioRepository;
-import br.whitefox.tcc.adopet.domain.login.UsuarioLoginRepository;
+import br.whitefox.tcc.adopet.domain.usuario.UsuarioRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -20,35 +19,18 @@ import java.io.IOException;
  */
 @Component
 public class FiltroDeSeguranca extends OncePerRequestFilter {
-
     @Autowired
     private TokenService tokenService;
-
     @Autowired
-    private UsuarioLoginRepository usuarioLoginRepository;
+    private UsuarioRepository usuarioRepository;
 
-    /**
-     * filterChain.doFilter(request,response): necessário para chamar os próximos
-     * filtros na aplicação
-     * var subject = tokenService.getSubject(tokeJWT): valida o token recebido
-     *-----------------------------------------------------------------------------------------------------------------
-     * Garante que o usuário ao dar Login carregue o Token:
-     *  var usuario = usuarioRepository.findByLogin(subject);
-     *             var authentication = new UsernamePasswordAuthenticationToken(usuario,null,usuario.getAuthorities());
-     *             SecurityContextHolder.getContext().setAuthentication(authentication);
-     * @param request
-     * @param response
-     * @param filterChain
-     * @throws ServletException
-     * @throws IOException
-     */
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
         var tokenJWT = recuperarToken(request);
         if (tokenJWT != null) {
             var subject = tokenService.getSubject(tokenJWT);
-            var usuario = usuarioLoginRepository.findByLogin(subject);
+            var usuario = usuarioRepository.findByEmail(subject);
             var authentication = new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }
